@@ -58,11 +58,8 @@ function roll() {
   } else {
     console.log(roll);
     console.log("You lose.");
-    if ((bankRoll -= betAmount) === 0) {
-        lose();
-    } else {
-        console.log(bankRoll);
-    }
+    bankRoll -= betAmount
+    console.log(bankRoll);
   }
 }
 
@@ -89,7 +86,12 @@ function game(){
         option = readlineSync.question( "[V]iew Instructions or [B]et:  ").toLowerCase();
         menuOptions(option);
     } else{
-        playAgain = readlineSync.question("Bet again? [Y]es or [N]o:  ").toLowerCase() === 'y';
+        if(bankRoll > 0)
+          playAgain = readlineSync.question("Bet again? [Y]es or [N]o:  ").toLowerCase() === 'y';
+        else {
+          lose();
+          return;
+        }
     }
     if(playAgain){
         bet();

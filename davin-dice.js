@@ -58,9 +58,19 @@ function roll() {
   } else {
     console.log(roll);
     console.log("You lose.");
-    bankRoll -= betAmount;
-    console.log(bankRoll);
+    if ((bankRoll -= betAmount) === 0) {
+        lose();
+    } else {
+        console.log(bankRoll);
+    }
   }
+}
+
+//This function displays the lose message when the player runs out of chips
+
+function lose() {
+    console.log(`Looks like you're all out of chips!`);
+    console.log(`Come back when you got more guap kid.`);
 }
 
 //This function allows the user to bet again

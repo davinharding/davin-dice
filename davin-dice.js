@@ -79,7 +79,7 @@ function game(){
     if(firstRun){
         console.log( "Welcome to Davin Dice!");
         var fs = require('fs');
-        var array = fs.readFileSync('/Users/davinharding/Desktop/wyncode/davin-dice/dice-pic.txt').toString().split("\n");
+        var array = fs.readFileSync('./dice-pic.txt').toString().split("\n");
         for(i in array) {
         console.log(array[i]);
         }

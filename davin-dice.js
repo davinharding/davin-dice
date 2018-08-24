@@ -9,7 +9,7 @@ function menuOptions(option) {
   if (option === "v") {
     console.log("Davin Dice is a simple game of chance.");
     console.log("You start the game with a bankroll of 500 chips.")
-    console.log("Choose an amount to bet and Press [R] to roll a 1-100 sided dice."); 
+    console.log("Choose an amount to bet then roll a 1-100 sided dice."); 
     console.log("If you roll greater than 50 you double your bet, roll a 50 or less and you lose your bet." );
     console.log("Use strategy or just plain luck to increase your bankroll and become a dice tycoon!");
     let go = readlineSync.question('( Back to menu --> press enter <-- )');

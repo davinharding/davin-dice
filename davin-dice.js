@@ -3,6 +3,10 @@ let  readlineSync  =  require('readline-sync'),
      betAmount=0,
      firstRun=true;
 
+function go() {
+  readlineSync.question('( --> press enter <-- )');
+}
+
 //This function gives the user an option to review instructions prior to rolling
 
 function menuOptions(option) {
@@ -12,8 +16,7 @@ function menuOptions(option) {
     console.log("Choose an amount to bet then roll a 1-100 sided dice."); 
     console.log("If you roll greater than 50 you double your bet, roll a 50 or less and you lose your bet." );
     console.log("Use strategy or just plain luck to increase your bankroll and become a dice tycoon!");
-    let go = readlineSync.question('( Back to menu --> press enter <-- )');
-    game();
+    go();
   } else if (option === "b") {
     bet();
   } else {
@@ -36,12 +39,12 @@ function bet() {
         bet();
       } else {
         console.log('Bouncer: "Quit messing around!"' );
-        let go = readlineSync.question('( press enter )');
+        go();
         bet();
       }
   } else {
     console.log('Bouncer: "Quit messing around!"' );
-    let go = readlineSync.question('( press enter )');
+    go();
     bet();
   }
 }

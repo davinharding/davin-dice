@@ -3,6 +3,8 @@ let  readlineSync  =  require('readline-sync'),
      betAmount=0,
      firstRun=true;
 
+//This function allows ths game to pause and wait for the user to press a key before continuing 
+
 function go() {
   readlineSync.question('( --> press enter <-- )');
 }
